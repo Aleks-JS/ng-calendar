@@ -1,5 +1,8 @@
-
-<span>{{date.day}}</span>
-<ng-container *ngIf="tasks">
-  <span> Задач:{{(tasks.length)}}</span>
+{{(date$|async)!.day}}
+<ng-container *ngIf="tasks$|async">
+  <app-badge color="success" [content]="(taskNote$ | async)?.length"></app-badge>
+  <app-badge color="warning" [content]="(taskShift$ | async)?.length"></app-badge>
+  <app-badge color="secondary" [content]="(taskEvent$ | async)?.length"></app-badge>
+  <app-badge color="danger" [content]="(taskTask$ | async)?.length"></app-badge>
 </ng-container>
+

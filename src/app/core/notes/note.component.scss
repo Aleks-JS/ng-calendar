@@ -1,3 +1,8 @@
+.task{
+    display: flex;
+    flex-direction: column;
+}
+
 .comments {
     display: flex;
     flex-direction:column ;
@@ -28,3 +33,6 @@ font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
     display: flex;
     flex-direction: column; 
 }
+
+
+
