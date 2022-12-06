@@ -95,7 +95,7 @@ export class NoteComponent {
       .subscribe(([type, date]) => {
         const _date = date!.currentDate;
 
-        _date!.setHours(8, 0, 0);
+        _date!.setHours(11, 0, 0);
 
         /**
          *очищение общих контроллов
@@ -132,16 +132,10 @@ export class NoteComponent {
           type !== TypeTask.note &&
           type !== TypeTask.shift
         ) {
-          console.log(_date.toISOString());
-          console.log(_date.toDateString());
-          console.log(_date.toLocaleDateString());
-          console.log(_date.toLocaleTimeString());
-          console.log(_date.toUTCString());
-          console.log(_date.getTimezoneOffset());
 
           this.form.addControl(
             'targetDate',
-            this._fb.control(_date.toISOString(), [Validators.required])
+            this._fb.control(_date.toISOString().replace('.000Z', '+03:00'), [Validators.required])
           );
         }
         /**

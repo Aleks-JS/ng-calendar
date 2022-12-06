@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+
+  <ion-datetime
+    formControlName="calendar"
+    presentation="date"
+    [multiple]="true"
+    [value]="[]"
+    minuteValues="0,15,30,45"
+    dayValues="5,10,15,20,25,30"
+  ></ion-datetime>
+  <ion-item>
+    <ion-select formControlName="type">
+      <ion-select-option
+        *ngFor="let type of types$ | async"
+        [value]="type.id">{{type.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" formControlName="descriptions"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="number" formControlName="shift"></ion-input>
+  </ion-item>
+</form>

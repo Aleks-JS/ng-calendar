@@ -9,12 +9,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { AppCommonModule } from '../../common/app-common.module';
-import { WorkingShiftsComponent } from '../working-shifts/working-shifts.component';
 
 const routes: Routes = [
   {
     path: '',
     component: CalendarComponent,
+    title: 'Календарь'
   },
 ];
 
@@ -23,7 +23,6 @@ const routes: Routes = [
     CalendarComponent,
     NoteComponent,
     ShortDayComponent,
-    WorkingShiftsComponent,
   ],
   imports: [
     CommonModule,

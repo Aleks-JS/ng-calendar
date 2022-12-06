@@ -1,19 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageModule } from './pages/page.module';
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'calendar'
-  },
-  {
-    path: 'calendar',
-    loadChildren: () =>
-      import('./pages/calendar-page/calendar-page.module').then(
-        (m) => m.CalendarPageModule
-      ),
-  },
+    loadChildren: () => import('./pages/page.module').then(() => PageModule)
+  }
 ];
 
 @NgModule({
